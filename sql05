@@ -1,0 +1,23 @@
+1)
+select lastname, firstname, role, name 
+from player p
+join wizard w on w.id=p.wizard_id
+join team t on t.id = p.team_id
+order by t.name asc,
+role asc,
+lastname asc,
+firstname asc;
+
+2)
+select firstname, lastname 
+from wizard w
+join player p on p.wizard_id = w.id
+where role = 'seeker'
+order by w.lastname,
+w.firstname;
+
+3)
+select firstname, lastname
+from wizard w
+left join player p on p.wizard_id = w.id
+where team_id is NULL;
